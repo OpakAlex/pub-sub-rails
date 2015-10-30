@@ -1,0 +1,3 @@
+## run `rails s`
+
+## run `redis-cli` and play  PUBLISH "chat" "hiii1"
