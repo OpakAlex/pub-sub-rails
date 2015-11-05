@@ -83,7 +83,7 @@ class Redis
   end
 end
 
- EM.run do
+init = proc {
   sub = Redis::PubSub.connect
   pub = Redis::PubSub.connect
 
@@ -92,4 +92,6 @@ end
   end
 
   pub.publish("chat", "hello")
-end
+}
+
+EM.next_tick(init)
